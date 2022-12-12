@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: rgb(255, 244, 231);
+}
+
+.game-title{
+display: flex;
+flex-direction: column;
+align-items: center;
+color: rgb(250, 3, 3);
+background-color: rgb(104, 69, 244);
+border-style: solid;
+border-color: black;
+box-shadow: 20px 15px 15px black;
+}
+.game-title h2{
+    color:orange;
+}
+
+.write-time{
+    color: blue;
+    text-align: center;
+}
+
+.juego{
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 5%;
+}
+
+.score-time{
+    display: flex;
+    flex-direction: column;
+    flex:50%;
+    
+    margin-top: 5%;
+    margin-left: 10%;
+    align-items: center;
+    
+    margin-right: 10%;
+
+    border-color: blue;
+    border-style: solid;
+
+    box-shadow: 20px 15px 15px black;
+}
+.score-time p{
+    font-size: 200%;
+}
+.score-time button{
+    width: 20%;
+    color: brown;
+    background-color: rgb(251, 243, 102);
+    box-shadow: 10px 5px 5px black;
+}
+
+.form {
+    margin-right: 5%;
+    border-style: solid;
+    border-color: blue;
+    padding: 1%;
+
+    box-shadow: 20px 15px 15px black;
+}
+.form p{
+    font-size: 150%;
+}
+.form button{
+    width: 30%;
+    color: brown;
+    background-color: rgb(251, 243, 102);
+    box-shadow: 10px 5px 5px black;
+}
+
+
+
+
