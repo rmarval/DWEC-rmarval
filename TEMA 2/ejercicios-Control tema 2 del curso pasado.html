@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // function ordena(cadena, numerico) {
+        //     let cadenaNueva = [];
+        //     let temp;
+        //     if (numerico == true) {
+        //         cadenaNueva = cadena.map(function ordenarNum(elemento) {
+        //             return parseInt(elemento);
+        //         });
+        //         for (let i = 0; i < cadenaNueva.length; i++) {
+        //             for (let j = i; j < cadenaNueva.length; j++) {
+        //                 if (cadenaNueva[i] >= cadenaNueva[j]) {
+        //                     temp = cadenaNueva[i];
+        //                     cadenaNueva[i] = cadenaNueva[j];
+        //                     cadenaNueva[j] = temp;                          
+        //                 }
+        //             }
+        //         }
+        //         return cadenaNueva;
+        //     }
+        //     else if (numerico == false) {
+        //         cadenaNueva = cadena.map(function ordenarAlfab(elemento) {
+        //             return elemento.toString();
+        //         });
+        //         for (let i = 0; i < cadenaNueva.length; i++) {
+        //             for (let j = i; j < cadenaNueva.length; j++) {
+        //                 if (cadenaNueva[i] >= cadenaNueva[j]) {
+        //                     temp = cadenaNueva[i];
+        //                     cadenaNueva[i] = cadenaNueva[j];
+        //                     cadenaNueva[j] = temp;
+        //                 }
+        //             }
+        //         }
+        //         return cadenaNueva;
+        //     }
+        // }
+
+        function ordena(cadena, numerico) {
+            let temp;
+            for (let i = 0; i < cadena.length; i++) {
+                for (let j = i; j < cadena.length; j++) {
+                    if (numerico == true) {
+                        if (Number(cadena[i]) /*+cadena[i]*/ >= Number(cadena[j]) /*+cadena[j]*/) {
+                            temp = cadena[i];
+                            cadena[i] = cadena[j];
+                            cadena[j] = temp;
+                        }
+                    } else {
+                        if (String(cadena[i]) >= String(cadena[j])) {
+                            temp = cadena[i];
+                            cadena[i] = cadena[j];
+                            cadena[j] = temp;
+                        }
+                    }
+                }
+            }
+            return cadena;
+        }
+
+        console.log(ordena([3, 2, "30", 4], true));
+        console.log(ordena([3, 2, "30", 4], false));
+
+///////////////////////////////////////////
+
+        function tajada(array, principio, final) {
+            let resul = [];
+            for (let i = principio; i < final; i++) {
+                resul.push(array[i]);
+            }
+            return resul;
+        }
+
+        console.log(tajada([3, 2, 30, 4], 1, 3)); // [2, 30]
+
+
+    </script>
+</body>
+
+</html>

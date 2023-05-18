@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const miObjeto = {
+            nombre: "Miguel",
+            lugar: 'En un lugar de la Mancha',
+            nombreCompleto: function () {
+                return 'Miguel de Cervantes Saavedra';
+            }
+        };
+
+        let keys;
+        
+        keys = (objeto) => {
+            const array = []; //defino el nuevo array
+            for (let i in objeto) {
+                array.push(i); //con push almaceno al final del array de i que es
+                //cada propiedad
+            }
+            return array; //devuelvo el nuevo array
+        };
+        const propiedades = keys(miObjeto);
+        console.log(propiedades); // deberá mostrar el array: ["nombre", "lugar"];
+    </script>
+</body>
+
+</html>
