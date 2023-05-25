@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //- Dado el siguiente array de coches, muestra por consola las peticiones enumeradas:
+        const coches = [
+            { 'marca': 'seat', 'modelo': 'panda', 'año': 1983, 'color': 'blanco', 'motor': 'gasolina' },
+            { 'marca': 'ford', 'modelo': 'mondeo', 'año': 2019, 'color': 'rojo', 'motor': 'diesel' },
+            { 'marca': 'toyota', 'modelo': 'avensis', 'año': 2019, 'color': 'negro', 'motor': 'híbrido' },
+            { 'marca': 'ford', 'modelo': 'fiesta', 'año': 1996, 'color': 'blanco', 'motor': 'diesel' },
+            { 'marca': 'opel', 'modelo': 'astra', 'año': 2006, 'color': 'rojo', 'motor': 'diesel' },
+            { 'marca': 'skoda', 'modelo': 'fabia', 'año': 1999, 'color': 'azul', 'motor': 'diesel' },
+            { 'marca': 'seat', 'modelo': 'leon', 'año': 2020, 'color': 'gris', 'motor': 'diesel' },
+            { 'marca': 'seat', 'modelo': 'ibiza', 'año': 2019, 'color': 'negro', 'motor': 'gasolina' }
+        ];
+        // Podéis usar los métodos find, sort, map, filter y reduce
+
+        //1.- Obtener un array de coches ordenado por modelo.
+        function compararModelo(coche1, coche2) {
+
+            if (coche1.modelo < coche2.modelo) {
+                return -1;
+            }
+            if (coche1.modelo > coche2.modelo) {
+                return 1;
+            }
+            return 0;
+        }
+
+        const modeloOrdenado = coches.sort(compararModelo);
+        console.log(modeloOrdenado);
+
+
+
+        //2.- Obtener un array de coches ordenado por año y motor (la función de ordenación debe incluir los 2 criterios).
+        function compararAnioMotor(coche1, coche2) {
+
+            if (coche1.año < coche2.año) {
+                return -1;
+            }
+            if (coche1.año > coche2.año) {
+                return 1;
+            }
+
+
+            if (coche1.motor < coche2.motor) { // Si los años son iguales, comparo por motor
+                return -1;
+            }
+            if (coche1.motor > coche2.motor) {
+                return 1;
+            }
+
+            return 0;
+        }
+
+        const anioMotorOrdenado = coches.sort(compararAnioMotor);
+        console.log(anioMotorOrdenado);
+
+
+
+        //3.- Obtener un array de los coches de marca seat.
+        const Seat = coches.filter(coche => coche.marca == 'seat');
+        console.log(Seat);
+
+
+
+        //4.- Obtener un array de los coches fabricados después del año 2000.
+        const milenial = coches.filter(coche => coche.año > 2000);
+        console.log(milenial);
+
+
+
+        //5.- Obtener un array sólo con los modelos y años de fabricación en formato 2 últimos dígitos.
+        const modelosYAnios = coches.map(coche => {
+
+            let modelo = coche.modelo; //busco modelo
+            let anio = coche.año.toString().slice(-2); // busco los 2 últimos dígitos del año como cadena
+
+            return { modelo, anio }; // creo un objeto
+        });
+
+        console.log(modelosYAnios);
+
+
+
+        //6.- Obtener el número de coches con motor diesel.
+        const diesel = coches.filter(coche => coche.motor == 'diesel');
+        const numeroDiesel = diesel.length;
+
+        console.log("Coches Diesel: ", numeroDiesel);
+
+
+
+        //7.- Obtener el primer coche cuyo motor no sea diesel.
+        const primeroNoDiesel = coches.find(coche => coche.motor != 'diesel');
+
+        console.log("Primer coche no Diesel:", primeroNoDiesel);
+
+
+
+        //8.- Obtener la suma de las longitudes de los modelos no diesel.
+        
+    </script>
+</body>
+
+</html>

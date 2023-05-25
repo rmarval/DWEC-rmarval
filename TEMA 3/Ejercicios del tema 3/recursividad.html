@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="number" id="campo1" placeholder="Introduce el primer valor">
+
+        <input type="number" id="campo2" placeholder="Introduce el segundo valor">
+
+        <button id="boton">Maximo Comun Divisor</button>
+    </form>
+    <script>
+        const campo1 = document.getElementById("campo1");
+        const campo2 = document.getElementById("campo2");
+        const boton = document.getElementById("boton");
+
+        function calcularMCD(a, b) {
+            // Implementación del algoritmo de Euclides para calcular el MCD
+            let temporal; //centinela
+
+            while (b != 0) {
+                temporal = b;
+                b = a % b;
+                a = temporal;
+            }
+            return a;
+        }
+
+        boton.addEventListener("click", () => {
+            const c1 = Number(campo1.value);
+            const c2 = Number(campo2.value);
+            const resultado = calcularMCD(c1, c2);
+
+            document.write('El máximo común divisor de ' + c1 + ' y ' + c2 + ' es: ' + resultado);
+        });
+
+
+    </script>
+</body>
+
+</html>

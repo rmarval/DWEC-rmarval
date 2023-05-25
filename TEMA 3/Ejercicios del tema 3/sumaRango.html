@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        function calcularSuma() {
+
+            let num1 = parseInt(document.getElementById("numero1").value);
+            let num2 = parseInt(document.getElementById("numero2").value);
+
+            let sumaPares = 0;
+            let sumaImpares = 0;
+
+            for (let i = num1; i <= num2; i++) {
+                if (i % 2 == 0) {
+                    sumaPares = sumaPares + i;
+                } else {
+                    sumaImpares = sumaImpares + i;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = "Suma de números pares: " + sumaPares
+                + "<br><br>Suma de números impares: " + sumaImpares;
+        }
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            event.preventDefault();
+            let boton = document.getElementById("boton");
+            boton.addEventListener("click", calcularSuma);
+        });
+
+    </script>
+    </head>
+
+        <h1>Suma de Rango</h1>
+        <form>
+            <label for="numero1">Introduce un número:</label>
+            <input type="number" id="numero1"><br>
+            <br>
+            <label for="numero2">Introduce otro número:</label>
+            <input type="number" id="numero2"><br>
+            <br>
+            <button type="button" id="boton">Calcular</button>
+        </form>
+        <br>
+        <div id="resultado"></div>
+    </body>
+</body>
+
+</html>
