@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de palabras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-title">
+        <h1 style="text-shadow: 13px  0px 0px rgb(0, 0, 0);">JUEGO DE PALABRAS</h1>
+        <button id="reglas">REGLAS</button>
+    </div>
+
+    <div class="juego">
+        <section class="score-time">
+            
+            <article class="write-time">
+                <h2">
+                    <h2 style="color:red; text-shadow: 15px  0px 0px black;">8 segundos</h2>
+                    Tiempo para escribir cada palabra !!
+                </h2>
+            </article>
+            <h2>Tiempo</h2>
+            <p id="contador">0</p>
+
+            <h2>Puntuacion</h2>
+            <p id="puntuacion">0</p>
+            <button style="text-shadow: 15px  0px 0px black;" id="empezar">START GAME</button>
+        </section>
+
+        <form action="#" method="get" id="formulario" name="formulario" class="form">
+            <section id="word-select">
+                <p><b> La letra seleccionada es:</b></p>
+                <p id="seleccionar" style="color:rgb(255, 0, 0); font-size: 6em; text-shadow: 12px  0px 0px black;"></p>
+                <button type="reset"><a style="text-decoration: none; text-shadow: 10px  0px 0px rgb(172, 171, 171);" href="index.html"> REINICIAR PALABRA</a></button>
+                <br><br>
+                <label><b> Escribe una palabra:</b></label><br><br>
+                <span style="color:rgb(169, 2, 2); font-size: 3.5em; text-shadow: 10px  0px 0px black;">-></span>
+                <input type="text" id="input-text" placeholder="Introduce" disabled>
+                
+                <br><br>
+                <button style="text-shadow: 10px  0px 0px black;" type="submit" id="añadir" disabled>AÑADIR</button>
+                <br><br>
+                
+            </section>
+        </form>
+    </div>
+
+    <script src="juego.js" type="module"></script>
+</body>
+
+</html>
