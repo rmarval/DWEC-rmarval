@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="formulario1.css">
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" pattern="\d{2}\.\d{3}\.\d{3}-[A-Z]|\d{8}-[A-Z]|\d{8}[A-Z]" required>
+            <br><br>
+        </div>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre"
+                pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ]+ [a-zA-ZñÑáéíóúÁÉÍÓÚ]+( [a-zA-ZñÑáéíóúÁÉÍÓÚ]+)?( [a-zA-ZñÑáéíóúÁÉÍÓÚ]+)?"
+                required>
+            <br><br>
+        </div>
+        <div>
+            <label for="fecha">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha" required>
+            <br><br>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" pattern="[a-zA-Z0-9]+@(g\.educaand\.es|iesjimenezmontoya\.es)" required>
+            <br><br>
+        </div>
+        <div>
+            <label for="web">WEB:</label>
+            <input type="url" id="web" pattern="https?://.+">
+            <br><br>
+        </div>
+        <div>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" pattern="(?=.*\d)(?=.*[a-zñ])(?=.*[A-Zñ])([a-zA-ZñÑ0-9]{8,10})"
+                required>
+            <br><br>
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+            <br><br>
+        </div>
+    </form>
+</body>
+
+</html>

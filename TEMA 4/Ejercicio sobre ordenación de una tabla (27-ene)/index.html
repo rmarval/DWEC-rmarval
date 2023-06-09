@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        th {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="grid">
+        <thead>
+            <tr>
+                <th data-type="number">Edad</th>
+                <th data-type="string">Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5</td>
+                <td>John</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Ann</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mike</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Sara</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        const tabla = document.getElementById('grid'); //la tabla
+
+        tabla.addEventListener('click', function (e) {
+
+            if (e.target.tagName != 'TH') return; //para ver si el elemento clicado es un encabezado de columna
+            let encabezado = e.target;//encabezado de columna clicado
+            let indiceColumna = encabezado.cellIndex; //indice de la columna
+            let tipoDato = encabezado.dataset.type;//tipo de dato de la columna
+            
+            ordenarTabla(indiceColumna, tipoDato);
+        });
+
+
+        function ordenarTabla(indiceColumna, tipoDato) {
+            //el body de la tabla
+            let cuerpoTabla = tabla.querySelector('tbody');
+            //las filas del cuerpo de la tabla las paso a un array
+            let filasArray = Array.from(cuerpoTabla.rows);
+            let comparar;
+
+            switch (tipoDato) {
+                case 'number':
+                    comparar = function (filaA, filaB) {
+                        return filaA.cells[indiceColumna].innerHTML - filaB.cells[indiceColumna].innerHTML;
+                    };
+                    break;
+                case 'string':
+                    comparar = function (filaA, filaB) {
+                        return filaA.cells[indiceColumna].innerHTML.localeCompare(filaB.cells[indiceColumna].innerHTML);
+                    };
+                    break;
+            }
+
+            filasArray.sort(comparar); //ordeno el array de filas utilizando la función de comparación
+            cuerpoTabla.append(...filasArray);//reordeno las filas en el cuerpo de la tabla
+        }
+    </script>
+</body>
+
+</html>

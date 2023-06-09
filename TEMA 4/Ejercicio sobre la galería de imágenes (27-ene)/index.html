@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Galeria de imagenes</title>
+  <meta charset="utf-8">
+</head>
+
+<style>
+  .thumbs {
+    display: flex;
+    flex-direction: row;
+  }
+</style>
+
+<body>
+
+  <img id="largeImg" src="https://es.js.cx/gallery/img1-lg.jpg" alt="Large image">
+
+  <ul id="thumbs" class="thumbs">
+    <a href="https://es.js.cx/gallery/img2-lg.jpg" title="Image 2"><img
+        src="https://es.js.cx/gallery/img2-thumb.jpg"></a>
+
+    <a href="https://es.js.cx/gallery/img3-lg.jpg" title="Image 3"><img
+        src="https://es.js.cx/gallery/img3-thumb.jpg"></a>
+
+    <a href="https://es.js.cx/gallery/img4-lg.jpg" title="Image 4"><img
+        src="https://es.js.cx/gallery/img4-thumb.jpg"></a>
+
+    <a href="https://es.js.cx/gallery/img5-lg.jpg" title="Image 5"><img
+        src="https://es.js.cx/gallery/img5-thumb.jpg"></a>
+
+    <a href="https://es.js.cx/gallery/img6-lg.jpg" title="Image 6"><img
+        src="https://es.js.cx/gallery/img6-thumb.jpg"></a>
+  </ul>
+
+  <script>
+    let recojothumbs = document.getElementById('thumbs');
+
+    recojothumbs.addEventListener('click', function (evento) {
+      let imagen = event.target.closest('a');
+
+      if (!imagen) {
+        return;
+      }
+
+      function mostrar(href, title) {
+        let recojolargeImg = document.getElementById('largeImg');
+        
+        recojolargeImg.src = href;
+        recojolargeImg.alt = title;
+      }
+
+      evento.preventDefault();
+      mostrar(imagen.href, imagen.title);
+      
+    });
+
+
+
+  </script>
+</body>
+
+</html>
