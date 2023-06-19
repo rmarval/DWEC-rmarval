@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <header>
+                <a href="productos.html"><h1 class="logo"><img width="70%" src="img/tienda.png" alt=""></h1></a>
+                <h1 style="color: brown;">"Tu tienda de confianza para videojuegos"</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="boton-volver" href="/productos.html"><button class="boton-menu boton-categoria active"><img width="50px"src="img/volver.png" alt=""> Seguir Comprando</button></a>
+                    </li>
+
+                    <li>
+                        <a class="boton-carrito active" href="/carrito.html">
+                            <img width="100px"src="img/carrito.png" alt="">Carrito <span class="numerito"></span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <footer>
+                <p class="texto-footer"></p>
+            </footer>
+        </aside>
+
+        <main>
+            <h2 class="titulo-principal">Carrito</h2>
+            <div class="contenedor-carrito">
+                <p id="carrito-vacio" class="carrito-vacio">El carrito esta vacio</p>
+
+                
+                <div id="carrito-productos" class="carrito-productos disabled">
+                     <!-- con JS -->
+                </div>
+                
+                <div id="carrito-acciones" class="carrito-acciones disabled">
+                    <div class="carrito-acciones-izquierda">
+                        <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                    </div>
+
+                    <h2 style="text-align: center; color: green;" id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra</h2>
+
+                    <div class="carrito-acciones-derecha">
+                        <div class="carrito-acciones-total">
+                            <p>Total + IVA (0.21): </p>
+                            <p id="total"></p>
+                        </div>
+                        
+                        <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar Ahora</button>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    
+    <script src="./carrito.js" type="module"></script>
+</body>
+
+</html>

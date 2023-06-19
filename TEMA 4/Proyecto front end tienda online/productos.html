@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAMERIA PRODUCTOS</title>
+<style>
+ 
+</style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <div class="container">
+    <aside>
+      <header>
+        <a href="index.html"><h1 class="logo"><img width="70%" src="img/tienda.png" alt=""></h1></a>
+        <h1 style="color: brown;">"Tu tienda de confianza para videojuegos"</h1>
+        <br>
+        <a href="index.html"><img width="60px" src="img/volver.png" alt=""></a>
+        <h3 ><a style="color: rgb(4, 145, 145);" href="index.html">IR AL HOME</a></h3>
+      </header>
+      <nav>
+        <ul class="menu">
+          <li>
+            <li>
+              🔍︎ BUSCAR <input style="width: 140px; margin-top: 60px; margin-bottom: 60px; height: 50px;padding: 10px; border-radius: 40px; border: none;" type="text" id="input-busqueda" placeholder="Busqueda...">
+            </li>
+            <a class="boton-carrito" href="/carrito.html">
+              <img width="100px" src="img/carrito.png" alt=""><span id="numerillo" class="numerillo">0</span></a>
+          </li>
+          
+          <li>
+            <button style="color: black;" id="todos" class="boton-menu boton-categoria active">TODOS LOS PRODUCTOS</button>
+          </li>
+    <div class="categ">
+          <li>
+            <button style="color: blue;" id="ps4" class="boton-menu boton-categoria"><img  width="30px" src="img/ps.png" alt="">&nbsp;PS4</button>
+          </li>
+          <li>
+            <button style="color: red;" id="switch" class="boton-menu boton-categoria"><img width="30px" src="img/sw.png" alt="">&nbsp;SWITCH</button>
+          </li>
+          <li>
+
+            <button style="color: black;" id="steam" class="boton-menu boton-categoria"><img width="30px" src="img/st.png" alt="">&nbsp;STEAM</button>
+          </li>
+</div>
+        </ul>
+      </nav>
+
+    </aside>
+
+    <main>
+      <h2 id="titulo-principal" class="titulo-principal">Todos los Juegos</h2>
+      <div style="margin-bottom: 40px;" class="paginacion">
+        <button style="color: rgb(0, 143, 100); padding: 5px; background-color: rgb(252, 213, 154);" id="paginaAnterior"><- PÁGINA ANTERIOR</button>
+        <button style="color: rgb(0, 143, 100); padding: 5px; background-color: rgb(252, 213, 154);" id="paginaSiguiente">SIGUIENTE PÁGINA -></button>
+      </div>
+      <div id="contenedor-productos" class="contenedor-productos">
+        <!-- relleno con JS -->
+        
+      </div>
+      
+
+
+
+    </main>
+  </div>
+
+  <script src="./script.js" type="module"></script>
+  <script src="./productos.js" type="module"></script>
+
+</body>
+
+</html>
