@@ -1,0 +1,34 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align:center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #getUserButton {
+    margin-bottom: 10px;
+  }
+
+  #userContainer,
+  #postsContainer,
+  #postContainer,
+  #commentsContainer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  #userContainer div,
+  #postsContainer div,
+  #postContainer div,
+  #commentsContainer div {
+    margin-bottom: 5px;
+  }
+
+  button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
